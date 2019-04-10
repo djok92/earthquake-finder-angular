@@ -1,0 +1,39 @@
+.header {
+  padding: 40px 0;
+  background-color: #04633f;
+  border-bottom: 5px solid #fff;
+
+
+  a {
+    color: #fff;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+      color: #ddd;
+    }
+
+    i {
+      padding-right: 10px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__caption-holder {
+    font-size: 1.4rem;
+  }
+
+  &__nav {
+    li {
+      list-style-type: none;
+      font-size: 1.2rem;
+    }
+  }
+}

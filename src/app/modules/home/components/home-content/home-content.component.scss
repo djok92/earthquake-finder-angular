@@ -1,0 +1,30 @@
+$hero-height: calc(100vh - 116px);
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-content {
+  height: $hero-height;
+  width: 100%;
+  background: url('src/assets/hero.jpg');
+  background-size: cover;
+  color: #fff;
+
+
+  .text-content {
+    padding-bottom: 30px;
+    border-bottom: 2px solid #fff;
+
+    h1 {
+      margin-bottom: 20px;
+    }
+  }
+
+
+}

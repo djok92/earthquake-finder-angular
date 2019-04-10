@@ -1,0 +1,28 @@
+$hero-height: calc(100vh - 116px);
+
+.search-form {
+  height: $hero-height;
+  display: flex;
+  align-items: center;
+  background-color: #dadde5;
+}
+
+.button-holder {
+  text-align: center;
+  margin-top: 20px;
+
+  .main-btn {
+    margin: 0 auto;
+    width: 180px;
+    padding: 10px 0;
+    background-color: #04633f;
+    color: #fff;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: #04633f;
+    }
+  }
+
+}
