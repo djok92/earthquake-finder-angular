@@ -1,4 +1,4 @@
-$hero-height: calc(100vh - 116px);
+$hero-height: calc(100vh - 124px);
 
 .search-form {
   height: $hero-height;
@@ -7,16 +7,31 @@ $hero-height: calc(100vh - 116px);
   background-color: #dadde5;
 }
 
+label {
+  input[type="radio"] {
+    margin-right: 20px;
+  }
+}
+
+
 .button-holder {
   text-align: center;
   margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-  .main-btn {
-    margin: 0 auto;
+  .main-btn,
+  .secondary-btn {
     width: 180px;
     padding: 10px 0;
-    background-color: #04633f;
     color: #fff;
+
+  }
+
+  .main-btn {
+    background-color: #04633f;
+    border-color: #04633f;
 
     &:hover,
     &:focus,
@@ -25,4 +40,51 @@ $hero-height: calc(100vh - 116px);
     }
   }
 
+  .secondary-btn {
+    background-color: #dc3545;
+    border-color: #dc3545;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: #dc3545;
+    }
+  }
 }
+
+.error {
+  label {
+    color: red;
+
+    &::after {
+      content: "*";
+      color: red;
+      font-size: 20px;
+    }
+  }
+
+  input {
+    border: 1px solid red;
+  }
+}
+
+// .error-msg {
+//   font-size: 1.6rem;
+//   padding: 20px;
+//   background: red;
+//   color: white;
+//   text-align: center;
+//   margin-bottom: 30px;
+// }
+
+
+// .select-language-container {
+//   display: flex;
+//   align-items: flex-start;
+//   justify-content: center;
+
+//   h5 {
+//     margin-bottom: 0;
+//     margin-right: 10px;
+//   }
+// }

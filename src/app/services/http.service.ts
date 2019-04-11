@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
 
-  constructor() { }
-  //  `https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&minmagnitude=4&
-  //   starttime=${this.startDate}&
-  //   endtime=${this.endDate}&
-  //   latitude=${lat}&
-  //   longitude=${long}&
-  //   maxradiuskm=${this.radius}`;
+  constructor(private http: HttpClient) { }
 
+
+
+  get(api) {
+    return this.http.get(api);
+  }
 }

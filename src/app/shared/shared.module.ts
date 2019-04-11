@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from 'src/app/components/header/header.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from 'src/app/components/header/header.component';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { SearchFormComponent } from '../components/search-form/search-form.component';
 
@@ -9,8 +11,11 @@ import { SearchFormComponent } from '../components/search-form/search-form.compo
   declarations: [HeaderComponent, FooterComponent, SearchFormComponent],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  exports: [HeaderComponent, RouterModule, FooterComponent, SearchFormComponent]
+  exports: [HeaderComponent, RouterModule, FooterComponent, SearchFormComponent, FormsModule, ReactiveFormsModule, HttpClientModule]
 })
 export class SharedModule { }

@@ -2,18 +2,37 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 mx-auto">
-        <form>
-          <div class="form-group">
-            <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter email">
+        <form [formGroup]="searchForm">
+          <div class="form-group" [ngClass]="{'error': cityControl.errors && cityControl.touched}">
+            <label for="text">City</label>
+            <input type="text" class="form-control" id="text" placeholder="Enter city" formControlName="city">
           </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Password">
+          <div class="form-group" [ngClass]="{'error': radiusControl.errors && radiusControl.touched}">
+            <label for="radius">Radius(km)</label>
+            <input type="number" class="form-control" id="radius" placeholder="Enter radius" formControlName="radius">
+          </div>
+          <div class="form-row">
+            <div class="col" [ngClass]="{'error': startDateControl.errors && startDateControl.touched}">
+              <label for="start-date">Start date</label>
+              <input type="date" class="form-control" id="start-date" formControlName="startDate">
+            </div>
+            <div class=" col" [ngClass]="{'error': endDateControl.errors && endDateControl.touched}">
+              <label for="end-date">End date</label>
+              <input type="date" class="form-control" id="end-date" formControlName="endDate">
+            </div>
+          </div>
+          <div class="form-group mt-4" [ngClass]="{'error': searchTypeControl.errors && searchTypeControl.touched}">
+            <label><input type="radio" id="number-earthquakes" value="num" formControlName="searchType">
+              Number of earthquakes for selected city
+            </label>
+            <label><input type="radio" id="magnitude-earthquakes" value="avg" formControlName="searchType">
+              Average earthquake magnitude for selected city
+            </label>
           </div>
         </form>
         <div class="button-holder">
-          <button class="btn main-btn">Submit</button>
+          <button class="btn main-btn" (click)="sendFormValues()">Submit</button>
+          <button class="btn secondary-btn" (click)="resetFormValues()">Reset form</button>
         </div>
       </div>
     </div>

@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiCoords: {
+    url: 'https://www.mapquestapi.com/geocoding/v1',
+    key: 'fvBPkCf742T3gS1F755wgbrqjmOxfNcv'
+  },
+  apiEarthquakes: {
+    url: 'https://earthquake.usgs.gov',
+  }
 };
 
 /*
