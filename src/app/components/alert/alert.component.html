@@ -1,0 +1,5 @@
+<div class="alert alert-success text-center" *ngIf="data >= 0">
+  <p *ngIf="searchType === 'num'">The number of earthquakes for selected period is: {{ data }}</p>
+  <p *ngIf="searchType === 'avg'">The average magnitude of earthquakes for selected period is:
+    {{ data !== 'NaN' ? data : 0 }}</p>
+</div>

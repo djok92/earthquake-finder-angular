@@ -1,5 +1,7 @@
 <div class="search">
   <app-header></app-header>
-  <app-search-form (emitFormValues)="getFormValues($event)"></app-search-form>
+  <app-search-form (emitFormValues)="initSearch($event)"></app-search-form>
+  <app-alert [data]="data" [searchType]="searchType">
+  </app-alert>
   <app-footer></app-footer>
 </div>

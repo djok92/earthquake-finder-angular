@@ -8,7 +8,7 @@ export class ValidationService {
 
   constructor() { }
 
-  validateAllFormFields(formGroup: FormGroup) {
+  validateAllFormFields(formGroup: FormGroup): void {
     Object.keys(formGroup.controls).forEach(field => {
       const control = formGroup.get(field);
       if (control instanceof FormControl) {

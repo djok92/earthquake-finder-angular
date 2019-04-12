@@ -53,7 +53,7 @@ export class SearchFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  sendFormValues() {
+  sendFormValues(): void {
     if (this.searchForm.valid) {
       this.emitFormValues.emit(this.searchForm.value);
     } else {
@@ -61,7 +61,7 @@ export class SearchFormComponent implements OnInit {
     }
   }
 
-  resetFormValues() {
+  resetFormValues(): void {
     this.searchForm.reset();
   }
 

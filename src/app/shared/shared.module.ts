@@ -6,9 +6,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from 'src/app/components/header/header.component';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { SearchFormComponent } from '../components/search-form/search-form.component';
+import { AlertComponent } from '../components/alert/alert.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, SearchFormComponent],
+  declarations: [HeaderComponent, FooterComponent, SearchFormComponent, AlertComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -16,6 +17,6 @@ import { SearchFormComponent } from '../components/search-form/search-form.compo
     ReactiveFormsModule,
     HttpClientModule
   ],
-  exports: [HeaderComponent, RouterModule, FooterComponent, SearchFormComponent, FormsModule, ReactiveFormsModule, HttpClientModule]
+  exports: [HeaderComponent, RouterModule, FooterComponent, SearchFormComponent, AlertComponent, FormsModule, ReactiveFormsModule, HttpClientModule]
 })
 export class SharedModule { }
