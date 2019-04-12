@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from './http.service';
 import { environment } from '../../environments/environment';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject, ReplaySubject } from 'rxjs';
+import { Earthquake } from '../classes/Earthquake';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EarthquakeService {
+
+  private earthquakes$: BehaviorSubject<Earthquake[]> = new BehaviorSubject<Earthquake[]>([]);
 
   constructor(private httpService: HttpService) { }
 
@@ -14,4 +17,17 @@ export class EarthquakeService {
     const api = `${environment.apiEarthquakes.url}/fdsnws/event/1/query?format=geojson&minmagnitude=4&starttime=${data.startDate}&endtime=${data.endDate}&latitude=${coords.latitude}&longitude=${coords.longitude}&maxradiuskm=${data.radius}`;
     return this.httpService.get(api);
   }
+
+  storeEarthquake(earthquake: Earthquake) {
+    this.earthquakes$.next([... this.earthquakes$.value, earthquake]);
+    console.log(this.earthquakes$.value);
+    localStorage.setItem('Earthquakes', JSON.stringify(this.earthquakes$.value));
+  }
+
+  getEarthquakes(): Observable<Earthquake[]> {
+    const earthquakes$: ReplaySubject<Earthquake[]> = new ReplaySubject<Earthquake[]>(1);
+    earthquakes$.next(JSON.parse(localStorage.getItem('Earthquakes')));
+    return earthquakes$.asObservable();
+  }
+
 }
