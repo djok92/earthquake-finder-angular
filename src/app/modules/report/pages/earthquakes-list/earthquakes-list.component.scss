@@ -1,0 +1,6 @@
+$hero-height: calc(100vh - 130px);
+
+.content {
+  min-height: $hero-height;
+  width: 100%;
+}

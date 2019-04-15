@@ -1,0 +1,8 @@
+<div class="card text-center" *ngFor="let data of dataSource">
+  <ul class="card-body">
+    <li class="card-item" *ngFor="let row of cardRows; let i = index">
+      <h5 *ngIf="i === 0" class="card-title">{{ row.title }} {{ data[row.key] }}!</h5>
+      <p *ngIf="i > 0" class="card-text">{{ row.title }} : {{ data[row.key] }}</p>
+    </li>
+  </ul>
+</div>

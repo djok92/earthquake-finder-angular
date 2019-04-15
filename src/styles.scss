@@ -1,5 +1,8 @@
+$hero-height: calc(100vh - 130px);
+
 body {
   font-family: 'Montserrat', sans-serif;
+  background-color: #dadde5;
 }
 
 ul {
@@ -24,4 +27,72 @@ h4,
 h5 {
   margin: 0;
   padding: 0;
+}
+
+.search-form,
+.add-form {
+  height: $hero-height;
+  display: flex;
+  align-items: center;
+}
+
+label {
+  input[type="radio"] {
+    margin-right: 20px;
+  }
+}
+
+
+.button-holder {
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .main-btn,
+  .secondary-btn {
+    width: 180px;
+    padding: 10px 0;
+    color: #fff;
+
+  }
+
+  .main-btn {
+    background-color: #04633f;
+    border-color: #04633f;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: #04633f;
+    }
+  }
+
+  .secondary-btn {
+    background-color: #dc3545;
+    border-color: #dc3545;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: #dc3545;
+    }
+  }
+}
+
+.error {
+  label {
+    color: red;
+
+    &::after {
+      content: "*";
+      color: red;
+      font-size: 20px;
+    }
+  }
+
+  input {
+    border: 1px solid red;
+  }
 }

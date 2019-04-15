@@ -1,6 +1,5 @@
-<div class="earthquake-holder mb-3" *ngFor="let earthquake of earthquakes">
-  <p>City: {{ earthquake.city }}</p>
-  <p>Latitude: {{ earthquake.latitude }}</p>
-  <p>Longitude: {{ earthquake.longitude }}</p>
-  <p>Magnitude: {{ earthquake.magnitude }}</p>
+<app-header></app-header>
+<div class="content">
+  <app-card [cardRows]="cardRows" [dataSource]="earthquakes"></app-card>
 </div>
+<app-footer></app-footer>

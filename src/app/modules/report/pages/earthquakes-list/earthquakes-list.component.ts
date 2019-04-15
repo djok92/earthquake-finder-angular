@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EarthquakeService } from 'src/app/services/earthquake.service';
 import { Earthquake } from 'src/app/classes/Earthquake';
+import { CardRows } from 'src/app/components/card/card.component';
 
 @Component({
   selector: 'app-earthquakes-list',
@@ -8,15 +9,33 @@ import { Earthquake } from 'src/app/classes/Earthquake';
   styleUrls: ['./earthquakes-list.component.scss']
 })
 export class EarthquakesListComponent implements OnInit {
+  cardRows: CardRows[] = [
+    {
+      key: 'city',
+      title: 'Reported earthquake near'
+    },
+    {
+      key: 'latitude',
+      title: 'Latitude'
+    },
+    {
+      key: 'longitude',
+      title: 'Longitude'
+    },
+    {
+      key: 'magnitude',
+      title: 'Magnitude'
+    }
+  ];
 
   earthquakes: any;
-  constructor(private earthquakeService: EarthquakeService) { }
+  constructor(private earthquakeService: EarthquakeService) {}
 
   ngOnInit() {
-    this.earthquakeService.getEarthquakes().subscribe((response: Earthquake[]) => {
-      this.earthquakes = response;
-      console.log(this.earthquakes);
-    });
+    this.earthquakeService
+      .getEarthquakes()
+      .subscribe((response: Earthquake[]) => {
+        this.earthquakes = response;
+      });
   }
-
 }

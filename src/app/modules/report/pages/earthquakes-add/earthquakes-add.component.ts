@@ -9,22 +9,18 @@ import { EarthquakeService } from 'src/app/services/earthquake.service';
   styleUrls: ['./earthquakes-add.component.scss']
 })
 export class EarthquakesAddComponent implements OnInit {
-
   data: any;
 
-  constructor(private cityService: CityService, private earthquakeService: EarthquakeService) { }
+  constructor(private cityService: CityService, private earthquakeService: EarthquakeService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   initSubmit(event) {
     this.data = event;
     this.cityService.getCoordinates(this.data.city).subscribe((response: any) => {
       this.data.latitude = response.results[0].locations[0].displayLatLng.lat;
       this.data.longitude = response.results[0].locations[0].displayLatLng.lng;
-      const earthquake = new Earthquake(this.data);
-      this.earthquakeService.storeEarthquake(earthquake);
+      this.earthquakeService.storeEarthquake(this.data);
     });
   }
-
 }

@@ -7,11 +7,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CityService {
-
-  constructor(private httpService: HttpService) { }
+  constructor(private httpService: HttpService) {}
 
   getCoordinates(city): Observable<any> {
-    const api = `${environment.apiCoords.url}/address?key=${environment.apiCoords.key}&inFormat=kvp&outFormat=json&location=${encodeURI(city)}&thumbMaps=false&maxResults=1`;
+    const api = `${environment.apiCoords.url}/address?key=${environment.apiCoords.key}&inFormat=kvp&outFormat=json&location=${encodeURI(
+      city
+    )}&thumbMaps=false&maxResults=1`;
     return this.httpService.get(api);
   }
 }
