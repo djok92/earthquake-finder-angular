@@ -1,0 +1,28 @@
+{
+  "add": {
+    "city": "City",
+    "cityPlaceholder": "Enter city",
+    "magnitude": "Magnitude",
+    "magnitudePlaceholder": "Enter approximate magnitude",
+    "time": "Time",
+    "submit": "Submit form",
+    "reset": "Reset form"
+  },
+
+  "search": {
+    "city": "City",
+    "cityPlaceholder": "Enter city",
+    "radius": "Radius(km)",
+    "radiusPlaceholder": "Enter radius",
+    "startDate": "Start date",
+    "endDate": "End date",
+    "radioNumber": "Number of earthquakes for selected city",
+    "radioAverage": "Average earthquake magnitude for selected city",
+    "submit": "Submit form",
+    "reset": "Reset form"
+  },
+
+  "selectLanguage": {
+    "title": "Select language"
+  }
+}

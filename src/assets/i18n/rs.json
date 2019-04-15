@@ -1,0 +1,28 @@
+{
+  "add": {
+    "city": "Grad",
+    "cityPlaceholder": "Unesi grad",
+    "magnitude": "Jacina",
+    "magnitudePlaceholder": "Unesi pribliznu jacinu",
+    "time": "Vreme",
+    "submit": "Dodaj",
+    "reset": "Ponisti formu"
+  },
+
+  "search": {
+    "city": "Grad",
+    "cityPlaceholder": "Unesi grad",
+    "radius": "Precnik(km)",
+    "radiusPlaceholder": "Unesi precnik",
+    "startDate": "Datum od",
+    "endDate": "Datum do",
+    "radioNumber": "Broj zemljotresa za izabrani grad",
+    "radioAverage": "Prosecna jacina za izabrani grad",
+    "submit": "Potvrdi",
+    "reset": "Resetuj formu"
+  },
+
+  "selectLanguage": {
+    "title": "Izaberite jezik"
+  }
+}

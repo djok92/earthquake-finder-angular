@@ -1,10 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import {
-  FormControl,
-  FormGroup,
-  FormBuilder,
-  Validators
-} from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ValidationService } from 'src/app/services/validation.service';
 
 @Component({
@@ -13,7 +8,6 @@ import { ValidationService } from 'src/app/services/validation.service';
   styleUrls: ['./add-form.component.scss']
 })
 export class AddFormComponent implements OnInit {
-
   addForm: FormGroup;
 
   @Output() emitFormValues = new EventEmitter();
@@ -52,8 +46,5 @@ export class AddFormComponent implements OnInit {
     this.addForm.reset();
   }
 
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
