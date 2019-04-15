@@ -24,7 +24,7 @@ export class EarthquakesAddComponent implements OnInit {
    * Function that calls methods from services, and inputs them form data
    * @param event - Value emited from the form
    */
-  initSubmit(event): void {
+  initSubmit(event: any): void {
     this.data = event;
     this.cityService.getCoordinates(this.data.city).subscribe((response: any) => {
       this.data.latitude = response.results[0].locations[0].displayLatLng.lat;

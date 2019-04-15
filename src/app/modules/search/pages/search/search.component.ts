@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CityService } from 'src/app/services/city.service';
 import { EarthquakeService } from 'src/app/services/earthquake.service';
 import { TranslateService } from '@ngx-translate/core';
+import { Earthquake } from 'src/app/classes/Earthquake';
 
 @Component({
   selector: 'app-search',
@@ -48,9 +49,9 @@ export class SearchComponent implements OnInit {
 
   /**
    * Helper functions that calculates average magnitude
-   * @param earthquakeArray - Array of earthquakes
+   * @param earthquakeArrayData - Array of earthquakes data
    */
-  private calculateAverageMagnitude(earthquakeArray): number {
-    return +(earthquakeArray.map(item => item.properties.mag).reduce((a, b) => a + b, 0) / earthquakeArray.length).toFixed(2);
+  private calculateAverageMagnitude(earthquakeArrayData: any[]): number {
+    return +(earthquakeArrayData.map(item => item.properties.mag).reduce((a, b) => a + b, 0) / earthquakeArrayData.length).toFixed(2);
   }
 }

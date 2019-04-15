@@ -14,7 +14,7 @@ export class CityService {
    * @returns - response from api
    * @param city - Value from city input, param for api call
    */
-  getCoordinates(city): Observable<any> {
+  getCoordinates(city: string): Observable<any> {
     const api = `${environment.apiCoords.url}/address?key=${environment.apiCoords.key}&inFormat=kvp&outFormat=json&location=${encodeURI(
       city
     )}&thumbMaps=false&maxResults=1`;

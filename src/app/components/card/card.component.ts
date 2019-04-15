@@ -12,7 +12,7 @@ export interface CardRows {
 })
 export class CardComponent implements OnInit {
   @Input() cardRows: CardRows;
-  @Input() dataSource: any[] = [];
+  @Input() dataSource: any[];
 
   constructor() {}
 

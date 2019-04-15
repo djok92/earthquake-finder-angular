@@ -12,7 +12,7 @@ export class HttpService {
    * @returns - response
    * @param api - url
    */
-  get(api): Observable<any> {
+  get(api: string): Observable<any> {
     return this.http.get(api);
   }
 }
