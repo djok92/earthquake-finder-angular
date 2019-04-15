@@ -6,11 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class HttpService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-
-
+  /**
+   * @returns - response
+   * @param api - url
+   */
   get(api): Observable<any> {
     return this.http.get(api);
   }

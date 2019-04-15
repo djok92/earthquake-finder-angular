@@ -32,10 +32,8 @@ export class EarthquakesListComponent implements OnInit {
   constructor(private earthquakeService: EarthquakeService) {}
 
   ngOnInit() {
-    this.earthquakeService
-      .getEarthquakes()
-      .subscribe((response: Earthquake[]) => {
-        this.earthquakes = response;
-      });
+    this.earthquakeService.getEarthquakes().subscribe((response: Earthquake[]) => {
+      this.earthquakes = response;
+    });
   }
 }

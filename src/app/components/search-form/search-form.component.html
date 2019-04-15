@@ -15,7 +15,7 @@
           </div>
           <div class="form-row">
             <div class="col" [ngClass]="{'error': startDateControl.errors && startDateControl.touched}">
-              <label for="start-date">{{ 'search.startDate | translate'}}</label>
+              <label for="start-date">{{ 'search.startDate' | translate}}</label>
               <input type="date" class="form-control" id="start-date" formControlName="startDate">
             </div>
             <div class=" col" [ngClass]="{'error': endDateControl.errors && endDateControl.touched}">

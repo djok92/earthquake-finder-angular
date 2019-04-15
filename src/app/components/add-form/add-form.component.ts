@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { ValidationService } from 'src/app/services/validation.service';
 
 @Component({
@@ -13,16 +13,15 @@ export class AddFormComponent implements OnInit {
   @Output() emitFormValues = new EventEmitter();
 
   // Helper Functions
-
-  get cityControl() {
+  get cityControl(): AbstractControl {
     return this.addForm.controls.city;
   }
 
-  get magnitudeControl() {
+  get magnitudeControl(): AbstractControl {
     return this.addForm.controls.magnitude;
   }
 
-  get timeControl() {
+  get timeControl(): AbstractControl {
     return this.addForm.controls.time;
   }
 
@@ -34,6 +33,9 @@ export class AddFormComponent implements OnInit {
     });
   }
 
+  /**
+   * Function that emits form values
+   */
   sendFormValues(): void {
     if (this.addForm.valid) {
       this.emitFormValues.emit(this.addForm.value);
@@ -42,6 +44,9 @@ export class AddFormComponent implements OnInit {
     }
   }
 
+  /**
+   * Function that resets form values
+   */
   resetFormValues(): void {
     this.addForm.reset();
   }

@@ -9,6 +9,11 @@ import { Observable } from 'rxjs';
 export class CityService {
   constructor(private httpService: HttpService) {}
 
+  /**
+   * Function that gets coordinates for entered city
+   * @returns - response from api
+   * @param city - Value from city input, param for api call
+   */
   getCoordinates(city): Observable<any> {
     const api = `${environment.apiCoords.url}/address?key=${environment.apiCoords.key}&inFormat=kvp&outFormat=json&location=${encodeURI(
       city

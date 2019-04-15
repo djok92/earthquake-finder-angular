@@ -20,7 +20,11 @@ export class EarthquakesAddComponent implements OnInit {
     this.currentLang = this.translateService.getDefaultLang();
   }
 
-  initSubmit(event) {
+  /**
+   * Function that calls methods from services, and inputs them form data
+   * @param event - Value emited from the form
+   */
+  initSubmit(event): void {
     this.data = event;
     this.cityService.getCoordinates(this.data.city).subscribe((response: any) => {
       this.data.latitude = response.results[0].locations[0].displayLatLng.lat;
@@ -29,7 +33,11 @@ export class EarthquakesAddComponent implements OnInit {
     });
   }
 
-  languageSelectionChange(language: any) {
+  /**
+   * Function for setting the language
+   * @param language - Language selected in select
+   */
+  languageSelectionChange(language: any): void {
     this.translateService.use(language.target.value);
   }
 }

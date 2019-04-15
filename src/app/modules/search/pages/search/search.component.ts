@@ -38,10 +38,18 @@ export class SearchComponent implements OnInit {
     });
   }
 
-  languageSelectionChange(language: any) {
+  /**
+   * Function for setting the language
+   * @param language - Language selected in select
+   */
+  languageSelectionChange(language: any): void {
     this.translateService.use(language.target.value);
   }
 
+  /**
+   * Helper functions that calculates average magnitude
+   * @param earthquakeArray - Array of earthquakes
+   */
   private calculateAverageMagnitude(earthquakeArray): number {
     return +(earthquakeArray.map(item => item.properties.mag).reduce((a, b) => a + b, 0) / earthquakeArray.length).toFixed(2);
   }

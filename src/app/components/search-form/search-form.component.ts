@@ -1,10 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import {
-  FormControl,
-  FormGroup,
-  FormBuilder,
-  Validators
-} from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { ValidationService } from 'src/app/services/validation.service';
 
 @Component({
@@ -13,30 +8,28 @@ import { ValidationService } from 'src/app/services/validation.service';
   styleUrls: ['./search-form.component.scss']
 })
 export class SearchFormComponent implements OnInit {
-
   searchForm: FormGroup;
 
   @Output() emitFormValues = new EventEmitter();
 
   // Helper Functions
-
-  get cityControl() {
+  get cityControl(): AbstractControl {
     return this.searchForm.controls.city;
   }
 
-  get radiusControl() {
+  get radiusControl(): AbstractControl {
     return this.searchForm.controls.radius;
   }
 
-  get startDateControl() {
+  get startDateControl(): AbstractControl {
     return this.searchForm.controls.startDate;
   }
 
-  get endDateControl() {
+  get endDateControl(): AbstractControl {
     return this.searchForm.controls.endDate;
   }
 
-  get searchTypeControl() {
+  get searchTypeControl(): AbstractControl {
     return this.searchForm.controls.searchType;
   }
 
@@ -46,13 +39,15 @@ export class SearchFormComponent implements OnInit {
       radius: ['', Validators.compose([Validators.required, Validators.min(0)])],
       startDate: ['', Validators.required],
       endDate: ['', Validators.required],
-      searchType: ['', Validators.required],
+      searchType: ['', Validators.required]
     });
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
+  /**
+   * Function that emits form values
+   */
   sendFormValues(): void {
     if (this.searchForm.valid) {
       this.emitFormValues.emit(this.searchForm.value);
@@ -61,8 +56,10 @@ export class SearchFormComponent implements OnInit {
     }
   }
 
+  /**
+   * Function that resets form values
+   */
   resetFormValues(): void {
     this.searchForm.reset();
   }
-
 }
