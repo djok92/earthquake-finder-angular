@@ -3,26 +3,46 @@
     <div class="row">
       <div class="col-lg-8 mx-auto">
         <form [formGroup]="searchForm">
+
           <div class="form-group" [ngClass]="{'error': cityControl.errors && cityControl.touched}">
             <label for="text">{{ 'search.city' | translate }}</label>
             <input type="text" class="form-control" id="text" [placeholder]=" 'search.cityPlaceholder' | translate"
               formControlName="city">
           </div>
+          <div class="alert alert-warning" role="alert"
+            *ngIf="searchForm.controls['city'].invalid && searchForm.controls['city'].touched">
+            {{ 'search.cityError' | translate }}
+          </div>
+
           <div class="form-group" [ngClass]="{'error': radiusControl.errors && radiusControl.touched}">
             <label for="radius">{{ 'search.radius' | translate }}</label>
             <input type="number" class="form-control" id="radius"
               [placeholder]=" 'search.radiusPlaceholder' | translate" formControlName="radius">
           </div>
+          <div class="alert alert-warning" role="alert"
+            *ngIf="searchForm.controls['radius'].invalid && searchForm.controls['radius'].touched">
+            {{ 'search.radiusError' | translate }}
+          </div>
+
           <div class="form-row">
             <div class="col" [ngClass]="{'error': startDateControl.errors && startDateControl.touched}">
               <label for="start-date">{{ 'search.startDate' | translate}}</label>
               <input type="date" class="form-control" id="start-date" formControlName="startDate">
+              <div class="alert alert-warning mt-3" role="alert"
+                *ngIf="searchForm.controls['startDate'].invalid && searchForm.controls['startDate'].touched">
+                {{ 'search.startDateError' | translate }}
+              </div>
             </div>
-            <div class=" col" [ngClass]="{'error': endDateControl.errors && endDateControl.touched}">
+            <div class="col" [ngClass]="{'error': endDateControl.errors && endDateControl.touched}">
               <label for="end-date">{{ 'search.endDate' | translate }}</label>
               <input type="date" class="form-control" id="end-date" formControlName="endDate">
+              <div class="alert alert-warning mt-3" role="alert"
+                *ngIf="searchForm.controls['endDate'].invalid && searchForm.controls['endDate'].touched">
+                {{ 'search.endDateError' | translate }}
+              </div>
             </div>
           </div>
+
           <div class="form-group mt-4" [ngClass]="{'error': searchTypeControl.errors && searchTypeControl.touched}">
             <label><input type="radio" id="number-earthquakes" value="num" formControlName="searchType">
               {{ 'search.radioNumber' | translate }}
@@ -31,6 +51,7 @@
               {{ 'search.radioAverage' | translate }}
             </label>
           </div>
+
         </form>
         <div class="button-holder">
           <button class="btn main-btn" (click)="sendFormValues()">{{ 'search.submit' | translate }}</button>

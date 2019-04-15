@@ -3,21 +3,37 @@
     <div class="row">
       <div class="col-lg-8 mx-auto">
         <form [formGroup]="addForm">
+
           <div class="form-group" [ngClass]="{'error': cityControl.errors && cityControl.touched}">
             <label for="text">{{ 'add.city' | translate }}</label>
             <input type="text" class="form-control" id="text" [placeholder]=" 'add.cityPlaceholder' | translate"
               formControlName="city">
           </div>
+          <div class="alert alert-warning" role="alert"
+            *ngIf="addForm.controls['city'].invalid && addForm.controls['city'].touched">
+            {{ 'add.cityError' | translate }}
+          </div>
+
           <div class="form-group" [ngClass]="{'error': magnitudeControl.errors && magnitudeControl.touched}">
             <label for="magnitude">{{ 'add.magnitude' | translate }}</label>
             <input type="number" class="form-control" id="magnitude"
               [placeholder]=" 'add.magnitudePlaceholder' | translate" formControlName="magnitude">
           </div>
+          <div class="alert alert-warning" role="alert"
+            *ngIf="addForm.controls['magnitude'].invalid && addForm.controls['magnitude'].touched">
+            {{ 'add.magnitudeError' | translate }}
+          </div>
+
           <div class="form-group" [ngClass]="{'error': timeControl.errors && timeControl.touched}">
             <label for="time">{{ 'add.time' | translate }}</label>
             <input type="time" class="form-control" id="time" placeholder="Enter approximate time"
               formControlName="time">
           </div>
+          <div class="alert alert-warning" role="alert"
+            *ngIf="addForm.controls['time'].invalid && addForm.controls['time'].touched">
+            {{ 'add.timeError' | translate }}
+          </div>
+
         </form>
         <div class="button-holder">
           <button class="btn main-btn" (click)="sendFormValues()">{{ 'add.submit' | translate}}</button>

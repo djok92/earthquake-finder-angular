@@ -27,8 +27,8 @@ export class AddFormComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private validationService: ValidationService) {
     this.addForm = this.formBuilder.group({
-      city: ['', Validators.required],
-      magnitude: ['', Validators.compose([Validators.required, Validators.min(0)])],
+      city: ['', Validators.compose([Validators.required, Validators.minLength(1)])],
+      magnitude: ['', Validators.compose([Validators.required, Validators.min(0), Validators.max(10)])],
       time: ['', Validators.required]
     });
   }

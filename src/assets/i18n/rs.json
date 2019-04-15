@@ -1,21 +1,28 @@
 {
   "add": {
     "city": "Grad",
-    "cityPlaceholder": "Unesi grad",
+    "cityPlaceholder": "Unesite grad",
+    "cityError": "Unesite grad",
     "magnitude": "Jacina",
-    "magnitudePlaceholder": "Unesi pribliznu jacinu",
+    "magnitudePlaceholder": "Unesite pribliznu jacinu",
+    "magnitudeError": "Unesite vrednost na skali 1-10",
     "time": "Vreme",
+    "timeError": "Unesite vreme",
     "submit": "Dodaj",
     "reset": "Ponisti formu"
   },
 
   "search": {
     "city": "Grad",
-    "cityPlaceholder": "Unesi grad",
+    "cityPlaceholder": "Unesite grad",
+    "cityError": "Unesite grad",
     "radius": "Precnik(km)",
-    "radiusPlaceholder": "Unesi precnik",
+    "radiusPlaceholder": "Unesite precnik",
+    "radiusError": "Unesite precnik",
     "startDate": "Datum od",
+    "startDateError": "Unesite pocetni datum",
     "endDate": "Datum do",
+    "endDateError": "Unesite zavrsni datum",
     "radioNumber": "Broj zemljotresa za izabrani grad",
     "radioAverage": "Prosecna jacina za izabrani grad",
     "submit": "Potvrdi",

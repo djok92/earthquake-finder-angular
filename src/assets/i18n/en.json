@@ -2,9 +2,12 @@
   "add": {
     "city": "City",
     "cityPlaceholder": "Enter city",
+    "cityError": "Please enter city",
     "magnitude": "Magnitude",
     "magnitudePlaceholder": "Enter approximate magnitude",
+    "magnitudeError": "Please enter magnitude on a scale 1-10",
     "time": "Time",
+    "timeError": "Please enter time",
     "submit": "Submit form",
     "reset": "Reset form"
   },
@@ -12,10 +15,14 @@
   "search": {
     "city": "City",
     "cityPlaceholder": "Enter city",
+    "cityError": "Please enter city",
     "radius": "Radius(km)",
     "radiusPlaceholder": "Enter radius",
+    "radiusError": "Please enter radius",
     "startDate": "Start date",
+    "startDateError": "Enter start date",
     "endDate": "End date",
+    "endDateError": "Enter end date",
     "radioNumber": "Number of earthquakes for selected city",
     "radioAverage": "Average earthquake magnitude for selected city",
     "submit": "Submit form",
