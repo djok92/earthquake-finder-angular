@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CityService } from 'src/app/services/city.service';
 import { EarthquakeService } from 'src/app/services/earthquake.service';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-earthquakes-add',
@@ -11,14 +10,11 @@ import { TranslateService } from '@ngx-translate/core';
 export class EarthquakesAddComponent implements OnInit {
   data: any;
   languages: string[] = [];
-  currentLang = 'rs';
+  currentLang: string;
 
-  constructor(private cityService: CityService, private earthquakeService: EarthquakeService, private translateService: TranslateService) {}
+  constructor(private cityService: CityService, private earthquakeService: EarthquakeService) {}
 
-  ngOnInit() {
-    this.languages = this.translateService.langs;
-    this.currentLang = this.translateService.getDefaultLang();
-  }
+  ngOnInit() {}
 
   /**
    * Function that calls methods from services, and inputs them form data
@@ -31,13 +27,5 @@ export class EarthquakesAddComponent implements OnInit {
       this.data.longitude = response.results[0].locations[0].displayLatLng.lng;
       this.earthquakeService.storeEarthquake(this.data);
     });
-  }
-
-  /**
-   * Function for setting the language
-   * @param language - Language selected in select
-   */
-  languageSelectionChange(language: any): void {
-    this.translateService.use(language.target.value);
   }
 }

@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CityService } from 'src/app/services/city.service';
 import { EarthquakeService } from 'src/app/services/earthquake.service';
-import { TranslateService } from '@ngx-translate/core';
-import { Earthquake } from 'src/app/classes/Earthquake';
 
 @Component({
   selector: 'app-search',
@@ -16,15 +14,9 @@ export class SearchComponent implements OnInit {
   };
   searchType = '';
   data = -1;
-  languages: string[] = [];
-  currentLang = 'rs';
+  constructor(private cityService: CityService, private earthquakeService: EarthquakeService) {}
 
-  constructor(private cityService: CityService, private earthquakeService: EarthquakeService, private translateService: TranslateService) {}
-
-  ngOnInit() {
-    this.languages = this.translateService.langs;
-    this.currentLang = this.translateService.getDefaultLang();
-  }
+  ngOnInit() {}
 
   initSearch(formData: any): void {
     this.cityService.getCoordinates(formData.city).subscribe((responseCoords: any) => {
@@ -37,14 +29,6 @@ export class SearchComponent implements OnInit {
           : (this.data = this.calculateAverageMagnitude(responseEarthquake.features));
       });
     });
-  }
-
-  /**
-   * Function for setting the language
-   * @param language - Language selected in select
-   */
-  languageSelectionChange(language: any): void {
-    this.translateService.use(language.target.value);
   }
 
   /**

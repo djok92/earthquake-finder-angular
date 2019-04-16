@@ -11,9 +11,10 @@ import { SearchFormComponent } from '../components/search-form/search-form.compo
 import { AlertComponent } from '../components/alert/alert.component';
 import { AddFormComponent } from '../components/add-form/add-form.component';
 import { CardComponent } from '../components/card/card.component';
+import { LanguageSelectComponent } from '../components/language-select/language-select.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, SearchFormComponent, AlertComponent, AddFormComponent, CardComponent],
+  declarations: [HeaderComponent, FooterComponent, SearchFormComponent, AlertComponent, AddFormComponent, CardComponent, LanguageSelectComponent],
   imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule, HttpClientModule, TranslateModule],
   exports: [
     HeaderComponent,
@@ -23,6 +24,7 @@ import { CardComponent } from '../components/card/card.component';
     AlertComponent,
     AddFormComponent,
     CardComponent,
+    LanguageSelectComponent,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,

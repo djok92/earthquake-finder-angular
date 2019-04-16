@@ -1,0 +1,6 @@
+<div class="select-language-container text-right mr-3 mt-3">
+  <h5 class="mb-2">{{ 'selectLanguage.title' | translate }}</h5>
+  <select #langSelect (change)="languageSelectionChange($event)">
+    <option *ngFor="let lang of languages" [value]="lang" [selected]=" lang === currentLang">{{ lang }}</option>
+  </select>
+</div>
